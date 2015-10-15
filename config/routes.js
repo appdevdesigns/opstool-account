@@ -23,6 +23,8 @@ module.exports = {
   'get /*(^.*)' : 'opstool-account/PluginController.profile'
 
   */
+    
+    'get /account/transactions' : 'opstool-account/AccountController.transactions'
 
 
 };
