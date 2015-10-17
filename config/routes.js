@@ -24,7 +24,8 @@ module.exports = {
 
   */
     
-    'get /account/transactions' : 'opstool-account/AccountController.transactions'
+    'get /account/transaction' : 'opstool-account/AccountController.transaction',
+    'get /account/period' : 'opstool-account/AccountController.period'
 
 
 };

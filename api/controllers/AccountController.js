@@ -9,10 +9,23 @@ var AD = require('ad-utils');
 
 module.exports = {
 	
-    transactions:function(req, res) {
+    transaction:function(req, res) {
         
         AD.sal.http({
-            url:'http://localhost:1337/opstool-account-stewardwise/account',
+            url:'http://localhost:1337/opstool-account-stewardwise/account/transaction',
+            method:'GET'
+        })
+        .fail(function(err){
+            res.serverError(err);
+        })
+        .then(function(data){
+            res.send(data);
+        })
+    },
+    period:function(req, res) {
+        
+        AD.sal.http({
+            url:'http://localhost:1337/opstool-account-stewardwise/account/period',
             method:'GET'
         })
         .fail(function(err){
