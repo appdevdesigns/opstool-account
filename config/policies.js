@@ -21,6 +21,10 @@ module.exports = {
 //        sync: serviceStack,
 //        logout:true
 //    }
+   'opstool-account/AccountController':{
+   		period:[],
+   		transaction:[]
+   }
 
 
 };

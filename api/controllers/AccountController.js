@@ -9,11 +9,21 @@ var AD = require('ad-utils');
 
 module.exports = {
 	
-    transaction:function(req, res) {
+    transaction:function(req,res) {
         
+
+        var url = 'http://localhost:'+sails.config.port+'/opstool-account-stewardwise/account/transaction';
+        var method  = 'GET';
+
+        var config = MobileManager.config('opstool-account');
+        url = config.url || url;
+        method = config.method || method;
+
+        AD.log('<green>account: url:</green>'+url);
+
         AD.sal.http({
-            url:'http://localhost:1337/opstool-account-stewardwise/account/transaction',
-            method:'GET'
+            url:url,
+            method:method
         })
         .fail(function(err){
             res.serverError(err);
@@ -24,9 +34,18 @@ module.exports = {
     },
     period:function(req, res) {
         
+        var url = 'http://localhost:'+sails.config.port+'/opstool-account-stewardwise/account/period';
+        var method  = 'GET';
+
+        var config = MobileManager.config('opstool-account');
+        url = config.url || url;
+        method = config.method || method;
+
+        AD.log('<green>account: url:</green>'+url);
+
         AD.sal.http({
-            url:'http://localhost:1337/opstool-account-stewardwise/account/period',
-            method:'GET'
+            url:url,
+            method:method
         })
         .fail(function(err){
             res.serverError(err);
